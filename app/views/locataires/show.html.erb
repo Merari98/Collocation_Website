@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @locataire.name %>
+</p>
+
+<p>
+  <strong>Surname:</strong>
+  <%= @locataire.surname %>
+</p>
+
+<p>
+  <strong>Contact:</strong>
+  <%= @locataire.contact %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @locataire.place %>
+</p>
+
+<p>
+  <strong>Sexe:</strong>
+  <%= @locataire.sexe %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @locataire.age %>
+</p>
+
+<p>
+  <strong>Other:</strong>
+  <%= @locataire.other %>
+</p>
+
+<p>
+  <strong>Loyer:</strong>
+  <%= @locataire.loyer %>
+</p>
+
+<%= link_to 'Edit', edit_locataire_path(@locataire) %> |
+<%= link_to 'Back', locataires_path %>

@@ -1,0 +1,58 @@
+<%= form_with(model: locataire, local: true) do |form| %>
+  <% if locataire.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(locataire.errors.count, "error") %> prohibited this locataire from being saved:</h2>
+
+      <ul>
+      <% locataire.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Nom %>
+    <%= form.text_field :name, id: :locataire_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Prénom %>
+    <%= form.text_field :surname, id: :locataire_surname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Contact %>
+    <%= form.text_field :contact, id: :locataire_contact %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Place %>
+    <%= form.text_field :place, id: :locataire_place %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Sexe %>
+    <%= form.text_field :sexe, id: :locataire_sexe %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Age %>
+    <%= form.number_field :age, id: :locataire_age %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Autres %>
+    <%= form.text_field :other, id: :locataire_other %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Loyer %>
+    <%= form.number_field :loyer, id: :locataire_loyer %>
+  </div>
+
+  <div class="actions">
+    
+    <%= form.submit "Envoyer" %>
+  </div>
+<% end %>

@@ -1,0 +1,98 @@
+<h1>Remplissez ce formulaire</h1>
+<div>
+    <h1>Résultat formulaire</h1>
+    <table class="table table-bordered">
+        <tr>
+            <td>Nom</td>
+            <td>prénom</td>
+            <td>sexe</td>
+            <td>Contact</td>
+            <td>Lieu d'habitation</td>
+            <td>Type d'habitation</td>
+            <td>Nombre de colocataire</td>
+            <td>age</td>
+            <td>Autres</td>
+            <td>Loyer</td>
+            <td>Avance</td>
+            <td>Caution</td>
+            <td>Commentaires</td>
+
+        </tr>
+    <% @owners.each do |owner| %>
+        <tr>
+            <td><%= owner.name%></td>
+            <td><%= owner.surname%></td>
+            <td><%= owner.sexe %></td>
+            <td><%= owner.contact%></td>
+            <td><%= owner.place%></td>
+            <td><%= owner.owner_type%></td>
+            <td><%= owner.number%></td>
+            <td><%= owner.age%></td>
+            <td><%= owner.other%></td>
+            <td><%= owner.rent%></td>
+            <td><%= owner.lead%></td>
+            <td><%= owner.bail%></td>
+            <td><%= owner.comments%></td>
+        </tr>
+
+    <% end %>
+    </table>
+</div>
+
+<div class="container">
+    <h1>formulaire</h1>
+<%= form_for @owner, method: "post" do |f|  %>
+    <%= f.label :Nom %>
+    <%= f.text_field :name, class: "form-control" %>
+    <%= f.label :prénom %>
+    <%= f.text_field :surname, class: "form-control" %>
+    <%= f.label :sexe %>
+    <%= f.text_field :sexe, class: "form-control" %>
+    <%= f.label :contact %>
+    <%= f.text_field :contact, class: "form-control" %>
+    <%= f.label :Quartier%>
+    <%= f.text_field :place, class: "form-control" %>
+    <%= f.label :type_de_maison %>
+    <%= f.text_field :owner_type, class: "form-control" %>
+    <%= f.label :Nombre_de_colocataire %>
+    <%= f.text_field :number, class: "form-control" %>
+    <%= f.label :age %>
+    <%= f.text_field :age, class: "form-control" %>
+    <%= f.label :Autres %>
+    <%= f.text_field :other, class: "form-control" %>
+    <%= f.label :Loyer %>
+    <%= f.text_field :rent, class: "form-control" %>
+    <%= f.label :Avance %>
+    <%= f.text_field :lead, class: "form-control" %>
+    <%= f.label :Caution %>
+    <%= f.text_field :bail, class: "form-control" %>
+    <%= f.label :Commentaires %>
+    <%= f.text_field :comments, class: "form-control" %>
+    <%= f.submit "Envoyer"%>
+    
+  <!--  <-- <label>Sexe</label>
+    <input type="text" name="sexe">
+    <label>Contact</label>
+    <input type="number" name="contact">
+    <label>Lieu d'habitation</label>
+    <input type="text" name="place">
+    <label>Type d'habitation</label>
+    <input type="text" name="Type">
+    <label>Nombre de colocataire</label>
+    <input type="number" name="Number">
+    <label>Age</label>
+    <input type="number" name="age">
+    <label>Autres</label>
+    <input type="text" name="other">
+    <label>Loyer</label>
+    <input type="number" name="rent">
+    <label>Avance</label>
+    <input type="number" name="lead">
+    <label>Caution</label>
+    <input type="number" name="bail">
+    <label>Commentaires</label>
+    <input type="text" name="comments">
+
+    <input type="submit" value="envoyer"> -->
+<% end %>
+</div>

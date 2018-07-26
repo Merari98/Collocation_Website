@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Locataires</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Prénom</th>
+      <th>Contact</th>
+      <th>Lieu d'Habitation</th>
+      <th>Sexe</th>
+      <th>Age</th>
+      <th>Autres</th>
+      <th>Loyer</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @locataires.each do |locataire| %>
+      <tr>
+        <td><%= locataire.name %></td>
+        <td><%= locataire.surname %></td>
+        <td><%= locataire.contact %></td>
+        <td><%= locataire.place %></td>
+        <td><%= locataire.sexe %></td>
+        <td><%= locataire.age %></td>
+        <td><%= locataire.other %></td>
+        <td><%= locataire.loyer %></td>
+        <td><%= link_to 'Show', locataire %></td>
+        <td><%= link_to 'Edit', edit_locataire_path(locataire) %></td>
+        <td><%= link_to 'Destroy', locataire, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Locataire', new_locataire_path %>
