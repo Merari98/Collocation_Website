@@ -50,6 +50,7 @@ class LocatairesController < ApplicationController
       end
     end
   end
+  
 
   # DELETE /locataires/1
   # DELETE /locataires/1.json
