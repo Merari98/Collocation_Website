@@ -5,7 +5,7 @@ class OwnersController < ApplicationController
     end
 
     def create
-    	@Owners = Owner.create(owner_params)
+    	Owner.create(owner_params)
     	redirect_to owners_path
     end
 

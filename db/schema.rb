@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180726115434) do
+ActiveRecord::Schema.define(version: 20180727132246) do
+
+  create_table "from_matchers", force: :cascade do |t|
+    t.integer "owner_id"
+    t.integer "locataires_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "locataires", force: :cascade do |t|
     t.string "name"
