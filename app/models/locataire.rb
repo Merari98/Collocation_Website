@@ -8,6 +8,17 @@ class Locataire < ApplicationRecord
     validates :other, presence:true
     validates :loyer, presence:true
     
+    after_create :compare_forms
+    
+        def compare_forms
+
+        owners = Owner.all
+            owners.each do |owner|
+                if owner.age == age && owner.sexe == sexe
+                 FromMatcher.create(locataires_id:id,owner_id: owner.id)
+                end
+            end
+        end
 
 end
 

@@ -12,6 +12,18 @@ class Owner < ApplicationRecord
     validates :bail, presence:true
     validates :comments, presence:true
 
+    after_create :compare_forms
+
+    def compare_forms
+    locataires = Locataire.all
+        locataires.each do |locataire|
+            if locataire.age == age && locataire.sexe == sexe
+             FromMatcher.create(owner_id:id,locataires_id: locataire.id)
+            end
+        end
+    end
+
+
     
 end
 

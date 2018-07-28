@@ -1,0 +1,7 @@
+<h1>Admin#index</h1>
+<p><%= @matchers. each do |match|%></p>
+<p><%= match_owner(match).name%></p>
+   <%= match_locataires(match).name%>
+<p><%= match_owner(match).age%></p>
+<p><%= match_locataires(match).age%></p>
+    <%end%>
