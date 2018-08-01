@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'admin/index'
+  root 'creatives#index'
 
   resources :locataires
   resources :owners
